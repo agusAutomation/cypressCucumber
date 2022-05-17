@@ -1,0 +1,33 @@
+{
+  "name": "cypresscucumber",
+  "version": "1.0.0",
+  "description": "Test how to use cypress with cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agusAutomation/cypressCucumber.git"
+  },
+  "keywords": [
+    "cypress",
+    "cucumber",
+    "automation"
+  ],
+  "author": "Agustina Edmé Aliciardi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agusAutomation/cypressCucumber/issues"
+  },
+  "homepage": "https://github.com/agusAutomation/cypressCucumber#readme",
+  "devDependencies": {
+    "cypress": "^9.6.1"
+  },
+  "dependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}
