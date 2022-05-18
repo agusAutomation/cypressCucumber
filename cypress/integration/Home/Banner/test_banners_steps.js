@@ -1,10 +1,6 @@
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import HomePage from "../../../pages/homepage";
-import Data from "../../../fixtures/banners.json";
-
-const url = "https://carejourney.com/";
-
-
+const url = Cypress.env('baseUrl');
 
 
 Given(`the CareJourney Page`, () => {
@@ -16,13 +12,24 @@ When(`see the banner`, () => {
 });
 
 Then(`check the information displayed`, () => {
+  let stepper = 2;
 
   cy.fixture('banners.json').then((fixture) => {
     fixture = fixture.banners;
 
     fixture.forEach((element) => {
+      //Check text
       HomePage.getBannerText().should('have.text', element.text);
-      HomePage.getNextButton().click();
+      if(Cypress.config("viewportWidth")>1000){
+        //For desktop view, press next button
+        HomePage.getNextButton().click();
+      }else{
+        //For mobie view press stepper
+        if(stepper<=3){
+          HomePage.getStepperCircle(stepper).click();
+          stepper++;
+        }
+      }
     });
 
   });

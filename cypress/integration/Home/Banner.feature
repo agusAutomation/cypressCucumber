@@ -4,7 +4,7 @@ Feature: When access to the CareJourney Page
   I want to access to homepage
   So can check each banner
 
-
+  @regression
   Scenario: Check banners
     Given the CareJourney Page
     When see the banner

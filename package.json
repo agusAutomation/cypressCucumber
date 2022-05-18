@@ -4,7 +4,8 @@
   "description": "Test how to use cypress with cucumber",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress open -e baseUrl=https://carejourney.com/",
+    "start": "node config/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,8 @@
     "cypress": "^9.6.1"
   },
   "dependencies": {
-    "cypress-cucumber-preprocessor": "^4.3.1"
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "inquirer": "^8.2.4"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true

@@ -1,5 +1,8 @@
 # cypressCucumber
 Prueba de Cypress con Cucumber
 
+For basic run:
+`npm test`
 
-`npx cypress open`
+For menu run:
+`npm start`
